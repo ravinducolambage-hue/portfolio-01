@@ -24,8 +24,8 @@ type FormErrors = Partial<Record<keyof FormData, string>>;
 // ─── CONSTANTS ────────────────────────────────────────────────────────────────
 
 const ACCENTS: Record<AccentKey, { label: string; hex: string; glow: string }> = {
-  teal:    { label: "DS Teal",  hex: "#00D4B1", glow: "rgba(0,212,177,0.18)" },
-  python:  { label: "Python",   hex: "#F4C430", glow: "rgba(244,196,48,0.18)" },
+  teal: { label: "DS Teal", hex: "#00D4B1", glow: "rgba(0,212,177,0.18)" },
+  python: { label: "Python", hex: "#F4C430", glow: "rgba(244,196,48,0.18)" },
   powerbi: { label: "Power BI", hex: "#F2A900", glow: "rgba(242,169,0,0.18)" },
 };
 
@@ -53,38 +53,46 @@ const PROJECTS: Project[] = [
 const FILTER_TAGS = ["All", "Python", "SQL", "Java", "Power BI", "PHP"];
 
 const SKILLS = [
-  { label: "Java",             pct: 96, Icon: Code2 },
-  { label: "SQL",              pct: 92, Icon: Database },
-  { label: "Python",           pct: 88, Icon: Code2 },
-  { label: "Power BI / DAX",   pct: 71, Icon: BarChart3 },
+  { label: "Java", pct: 96, Icon: Code2 },
+  { label: "SQL", pct: 92, Icon: Database },
+  { label: "Python", pct: 88, Icon: Code2 },
+  { label: "Power BI / DAX", pct: 71, Icon: BarChart3 },
   { label: "Machine Learning", pct: 67, Icon: Cpu },
-  { label: "Statistics",       pct: 59, Icon: Layers },
+  { label: "Statistics", pct: 59, Icon: Layers },
 ];
 
 const TECH_TAGS = [
-  { name: "Python",       note: "Primary language for ML, ETL, and analysis" },
-  { name: "SQL",          note: "Advanced queries, window functions, stored procs" },
-  { name: "Java",         note: "Object-oriented programming and application development" },
-  { name: "Power BI",     note: "Data modeling, DAX, and interactive dashboards" },
-  { name: "Pandas",       note: "Data wrangling, aggregation, time-series" },
+  { name: "Python", note: "Primary language for ML, ETL, and analysis" },
+  { name: "SQL", note: "Advanced queries, window functions, stored procs" },
+  { name: "Java", note: "Object-oriented programming and application development" },
+  { name: "Power BI", note: "Data modeling, DAX, and interactive dashboards" },
+  { name: "Pandas", note: "Data wrangling, aggregation, time-series" },
   { name: "scikit-learn", note: "Classification, regression, clustering pipelines" },
-  { name: "MATLAB",       note: "Mathematical modeling and numerical computing" },
-  { name: "HTML/CSS",     note: "Web structure and styling" },
-  { name: "PHP",          note: "Server-side scripting and backend logic" },
-  { name: "MySQL",        note: "Relational database management" },
-  { name: "Git/GitHub",   note: "Version control and collaborative development" },
-  { name: "Docker",       note: "Containerization and environment reproducibility" },
+  { name: "MATLAB", note: "Mathematical modeling and numerical computing" },
+  { name: "HTML/CSS", note: "Web structure and styling" },
+  { name: "PHP", note: "Server-side scripting and backend logic" },
+  { name: "MySQL", note: "Relational database management" },
+  { name: "Git/GitHub", note: "Version control and collaborative development" },
+  { name: "Docker", note: "Containerization and environment reproducibility" },
 ];
 
 const TIMELINE: TimelineEntry[] = [
-  { year: "2024–Present", role: "Finance Head, Career Gateway 1.0", org: "IEEE Student Branch, Uni. of Sri Jayewardenepura", type: "work",
-    desc: "Managing finances and budget allocation for the Career Gateway 1.0 initiative." },
-  { year: "2024–Present", role: "IEEE Student Branch Member", org: "IEEE, Uni. of Sri Jayewardenepura", type: "work",
-    desc: "Active member participating in technical and professional development events." },
-  { year: "2023–Present", role: "Information and Communication Technology (ICT) – B.Sc. (General)", org: "University of Sri Jayewardenepura", type: "edu",
-    desc: "Undergraduate degree focusing on Mathematics, Physics, and Information & Communication Technology." },
-  { year: "Sports", role: "Sports Representative", org: "University & Mercantile", type: "award",
-    desc: "University Cricket Team representative. University Baseball Team representative. Mercantile Cricket player." },
+  {
+    year: "2024–Present", role: "Finance Head, Career Gateway 1.0", org: "IEEE Student Branch, Uni. of Sri Jayewardenepura", type: "work",
+    desc: "Managing finances and budget allocation for the Career Gateway 1.0 initiative."
+  },
+  {
+    year: "2024–Present", role: "IEEE Student Branch Member", org: "IEEE, Uni. of Sri Jayewardenepura", type: "work",
+    desc: "Active member participating in technical and professional development events."
+  },
+  {
+    year: "2023–Present", role: "Information and Communication Technology (ICT) – B.Sc. (General)", org: "University of Sri Jayewardenepura", type: "edu",
+    desc: "Undergraduate degree focusing on Mathematics, Physics, and Information & Communication Technology."
+  },
+  {
+    year: "Sports", role: "Sports Representative", org: "University & Mercantile", type: "award",
+    desc: "University Cricket Team representative. University Baseball Team representative. Mercantile Cricket player."
+  },
 ];
 
 const NAV_LINKS = ["Home", "About", "Projects", "Experience", "Contact"];
@@ -182,10 +190,10 @@ function MagneticBtn({ children, onClick, primary, accentHex, isDark, className 
     ...(primary
       ? { background: accentHex, color: isDark ? "#040D1A" : "#fff" }
       : {
-          border: `1.5px solid ${accentHex}55`,
-          color: isDark ? "#E1EBF5" : "#1A2535",
-          background: isDark ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.6)",
-        }),
+        border: `1.5px solid ${accentHex}55`,
+        color: isDark ? "#E1EBF5" : "#1A2535",
+        background: isDark ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.6)",
+      }),
   };
   return (
     <button ref={ref} onMouseMove={onMove} onMouseLeave={() => setXY({ x: 0, y: 0 })}
@@ -306,37 +314,32 @@ function TechPill({ name, note, isDark }: { name: string; note: string; isDark: 
     SQL: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
     "Power BI": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powerbi/powerbi-original.svg",
     Java: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-    "Machine Learning": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
-    Statistics: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg",
     Pandas: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg",
-    "scikit-learn": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sklearn/sklearn-original.svg",
+    "scikit-learn": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg",
     MATLAB: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg",
     "HTML/CSS": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
     PHP: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
     MySQL: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
     "Git/GitHub": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
     Docker: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-    // Add more mappings as needed
   };
   const iconSrc = iconMap[name] || "";
   return (
     <div className="relative" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
-      <div className={`px-3 py-1.5 rounded-lg text-xs font-semibold cursor-default transition-all duration-200 border ${
-        isDark ? "bg-white/[0.07] border-white/[0.1] text-white/75 hover:bg-white/[0.14]" : "bg-white/80 border-slate-200 text-slate-700 hover:bg-slate-50"
-      }`}>
-        {iconSrc ? <img src={iconSrc} alt={name} className="h-6 w-6 inline-block" /> : name}
+      <div className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold cursor-default transition-all duration-200 border ${isDark ? "bg-white/[0.07] border-white/[0.1] text-white/75 hover:bg-white/[0.14]" : "bg-white/80 border-slate-200 text-slate-700 hover:bg-slate-50"
+        }`}>
+        {iconSrc && <img src={iconSrc} alt={name} className="h-5 w-5 flex-shrink-0" />}
+        <span>{name}</span>
       </div>
       <AnimatePresence>
         {show && (
           <motion.div initial={{ opacity: 0, y: 6, scale: 0.94 }} animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 6, scale: 0.94 }} transition={{ duration: 0.13 }}
-            className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-2.5 px-3 py-2 rounded-xl text-xs w-52 text-center z-20 shadow-2xl border ${
-              isDark ? "bg-[#0D2044] border-white/15 text-white/80" : "bg-white border-slate-200/80 text-slate-600"
-            }`}>
+            className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-2.5 px-3 py-2 rounded-xl text-xs w-52 text-center z-20 shadow-2xl border ${isDark ? "bg-[#0D2044] border-white/15 text-white/80" : "bg-white border-slate-200/80 text-slate-600"
+              }`}>
             {note}
-            <div className={`absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent ${
-              isDark ? "border-t-[#0D2044]" : "border-t-white"
-            }`} />
+            <div className={`absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent ${isDark ? "border-t-[#0D2044]" : "border-t-white"
+              }`} />
           </motion.div>
         )}
       </AnimatePresence>
@@ -408,9 +411,8 @@ function ProjectModal({ project, isDark, accentHex, onClose }: {
       onClick={onClose}>
       <motion.div initial={{ scale: 0.88, y: 24 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.88, y: 24 }}
         transition={{ type: "spring", damping: 28, stiffness: 320 }}
-        className={`relative max-w-2xl w-full max-h-[90vh] overflow-y-auto rounded-2xl border ${
-          isDark ? "bg-[#071220] border-white/[0.1]" : "bg-white border-slate-200"
-        }`}
+        className={`relative max-w-2xl w-full max-h-[90vh] overflow-y-auto rounded-2xl border ${isDark ? "bg-[#071220] border-white/[0.1]" : "bg-white border-slate-200"
+          }`}
         style={{ boxShadow: `0 32px 90px ${accentHex}28` }}
         onClick={e => e.stopPropagation()}>
         <div className="relative h-52 bg-slate-800 overflow-hidden">
@@ -461,7 +463,7 @@ function ProjectModal({ project, isDark, accentHex, onClose }: {
               style={{ background: accentHex, color: isDark ? "#040D1A" : "#fff" }}>
               <Github size={15} /> GitHub
             </a>
-            
+
           </div>
         </div>
       </motion.div>
@@ -542,10 +544,9 @@ function ContactForm({ isDark, accentHex }: { isDark: boolean; accentHex: string
   };
 
   const fieldBase = (f: keyof FormData) =>
-    `w-full px-4 py-3 rounded-xl text-sm outline-none border transition-all duration-250 ${
-      errors[f]
-        ? "border-red-500 bg-red-500/8 text-red-400 placeholder-red-400/50"
-        : isDark
+    `w-full px-4 py-3 rounded-xl text-sm outline-none border transition-all duration-250 ${errors[f]
+      ? "border-red-500 bg-red-500/8 text-red-400 placeholder-red-400/50"
+      : isDark
         ? `bg-white/[0.05] border-white/[0.08] ${isDark ? "text-white/85" : "text-slate-800"} placeholder-white/25 focus:border-[${accentHex}]`
         : "bg-white/80 border-slate-200 text-slate-800 placeholder-slate-400 focus:border-slate-400"
     } ${shakingField === f ? "animate-[shake_0.5s_ease]" : ""}`;
@@ -643,11 +644,10 @@ function Navbar({ active, isDark, setIsDark, accent, setAccent }: {
             const isActive = active === id;
             return (
               <button key={item} onClick={() => goto(id)}
-                className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 ${
-                  isDark
+                className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 ${isDark
                     ? isActive ? "text-white" : "text-white/50 hover:text-white/85"
                     : isActive ? "text-slate-900" : "text-slate-500 hover:text-slate-800"
-                }`}
+                  }`}
                 style={{ fontFamily: "'Outfit', sans-serif" }}>
                 {item}
                 {isActive && (
@@ -670,14 +670,12 @@ function Navbar({ active, isDark, setIsDark, accent, setAccent }: {
               {accentOpen && (
                 <motion.div initial={{ opacity: 0, scale: 0.9, y: -6 }} animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.9, y: -6 }} transition={{ duration: 0.15 }}
-                  className={`absolute right-0 top-10 rounded-xl p-2.5 flex flex-col gap-1 min-w-[130px] shadow-2xl border ${
-                    isDark ? "bg-[#0A1C30] border-white/[0.1]" : "bg-white border-slate-200"
-                  }`}>
+                  className={`absolute right-0 top-10 rounded-xl p-2.5 flex flex-col gap-1 min-w-[130px] shadow-2xl border ${isDark ? "bg-[#0A1C30] border-white/[0.1]" : "bg-white border-slate-200"
+                    }`}>
                   {(Object.keys(ACCENTS) as AccentKey[]).map(k => (
                     <button key={k} onClick={() => { setAccent(k); setAccentOpen(false); }}
-                      className={`flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold transition-colors ${
-                        accent === k ? (isDark ? "bg-white/10" : "bg-slate-100") : (isDark ? "hover:bg-white/6" : "hover:bg-slate-50")
-                      } ${isDark ? "text-white/80" : "text-slate-700"}`}>
+                      className={`flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold transition-colors ${accent === k ? (isDark ? "bg-white/10" : "bg-slate-100") : (isDark ? "hover:bg-white/6" : "hover:bg-slate-50")
+                        } ${isDark ? "text-white/80" : "text-slate-700"}`}>
                       <span className="w-2.5 h-2.5 rounded-full" style={{ background: ACCENTS[k].hex }} />
                       {ACCENTS[k].label}
                       {accent === k && <Check size={11} style={{ color: ACCENTS[k].hex, marginLeft: "auto" }} />}

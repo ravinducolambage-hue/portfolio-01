@@ -791,11 +791,10 @@ function AboutSection({ isDark, accent }: { isDark: boolean; accent: AccentKey }
         <div className="grid md:grid-cols-2 gap-16 mb-16">
           <div className="space-y-4">
             <p className={`text-base leading-relaxed ${isDark ? "text-white/65" : "text-slate-600"}`}>
-              I'm a final-year CS student at the University of Washington, specializing in data science and machine learning.
-              My work sits at the intersection of rigorous statistical thinking and pragmatic engineering — models that actually get deployed, dashboards stakeholders actually use, pipelines that stay up.
+              I am a second-year Information Technology undergraduate student at the University of Sri Jayewardenapura, specializing in data science and data analysis. My work bridges the gap between structured analytical insights and practical engineering by building optimized SQL databases, designing interactive Power BI dashboards, and developing clean Python workflows that translate complex data into clear business value.
             </p>
             <p className={`text-base leading-relaxed ${isDark ? "text-white/65" : "text-slate-600"}`}>
-              I've interned at Microsoft and Deloitte, led the UW Data Science Club, and spent more weekends than I'll admit fine-tuning NFL prediction models. I care deeply about making analysis accessible and actionable.
+              I currently balance my academic studies with real-world execution as a part-time Assistant Sales Manager at Power Hands Plantation. When I am not writing scripts or managing repositories on GitHub, I combine my technical skills with my passion for sports analytics, specifically focusing on cricket statistics and university sports performance. I care deeply about making data accessible, intuitive, and highly actionable for decision-makers.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4">

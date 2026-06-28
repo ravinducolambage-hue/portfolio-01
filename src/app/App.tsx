@@ -312,7 +312,7 @@ function TechPill({ name, note, isDark }: { name: string; note: string; isDark: 
   const iconMap: Record<string, string> = {
     Python: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
     SQL: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-    "Power BI": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powerbi/powerbi-original.svg",
+    "Power BI": "https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg",
     Java: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
     Pandas: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg",
     "scikit-learn": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg",
@@ -325,16 +325,33 @@ function TechPill({ name, note, isDark }: { name: string; note: string; isDark: 
   };
   const iconSrc = iconMap[name] || "";
   return (
-    <div className="relative" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
-      <div className={`flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-sm font-semibold cursor-default transition-all duration-200 border ${isDark ? "bg-white/[0.07] border-white/[0.1] text-white/75 hover:bg-white/[0.14]" : "bg-white/80 border-slate-200 text-slate-700 hover:bg-slate-50"
+    <div className="relative flex flex-col items-center gap-2 cursor-default group"
+      onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
+      {/* Circular icon */}
+      <div className={`w-16 h-16 rounded-full flex items-center justify-center border-2 transition-all duration-200 group-hover:scale-110 group-hover:border-opacity-80 ${isDark
+          ? "bg-white/[0.07] border-white/[0.12] group-hover:bg-white/[0.14]"
+          : "bg-white/80 border-slate-200 group-hover:bg-slate-50"
         }`}>
-        {iconSrc && <img src={iconSrc} alt="" className="h-7 w-7 flex-shrink-0" />}
-        <span>{name}</span>
+        {iconSrc
+          ? <img src={iconSrc} alt={name} className="w-9 h-9 object-contain" />
+          : <span className={`text-sm font-bold ${isDark ? "text-white/70" : "text-slate-600"}`}>
+            {name.slice(0, 2).toUpperCase()}
+          </span>
+        }
       </div>
+      {/* Name below */}
+      <span className={`text-xs font-semibold text-center leading-tight max-w-[72px] ${isDark ? "text-white/60" : "text-slate-500"
+        }`} style={{ fontFamily: "'DM Mono', monospace" }}>
+        {name}
+      </span>
+      {/* Tooltip */}
       <AnimatePresence>
         {show && (
-          <motion.div initial={{ opacity: 0, y: 6, scale: 0.94 }} animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 6, scale: 0.94 }} transition={{ duration: 0.13 }}
+          <motion.div
+            initial={{ opacity: 0, y: 6, scale: 0.94 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 6, scale: 0.94 }}
+            transition={{ duration: 0.13 }}
             className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-2.5 px-3 py-2 rounded-xl text-xs w-52 text-center z-20 shadow-2xl border ${isDark ? "bg-[#0D2044] border-white/15 text-white/80" : "bg-white border-slate-200/80 text-slate-600"
               }`}>
             {note}

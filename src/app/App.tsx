@@ -30,112 +30,61 @@ const ACCENTS: Record<AccentKey, { label: string; hex: string; glow: string }> =
 };
 
 const PHRASES = [
-  "I analyze business metrics",
-  "I model sports statistics",
-  "I build data pipelines",
-  "I create predictive models",
-  "I visualize complex data",
+  "I turn raw data into actionable insights.",
+  "I engineer data workflows with SQL and Python.",
+  "I translate complex datasets into visual stories.",
+  "I train predictive models.",
+  "I build intelligent systems.",
 ];
 
 const PROJECTS: Project[] = [
   {
     id: 1,
-    title: "Sales Analytics Dashboard",
-    desc: "End-to-end Power BI dashboard tracking $4.2M quarterly revenue across 12 regions with real-time refresh.",
-    tags: ["Power BI", "SQL"],
-    stack: ["Power BI", "SQL Server", "DAX", "Azure Data Factory"],
+    title: "Roamly",
+    desc: "A community-driven travel discovery platform for Sri Lanka connecting local travellers with authentic destinations.",
+    tags: ["PHP", "MySQL", "JavaScript"],
+    stack: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
     img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=420&fit=crop&auto=format",
-    metrics: ["$4.2M tracked", "40+ DAX measures", "12 regions", "Daily refresh"],
-    detail: "Ingests data from 5 source systems via SQL Server. Implemented row-level security, 40+ custom DAX measures, and automated daily refresh via Azure Data Factory. Reduced reporting time from 3 days to real-time.",
-  },
-  {
-    id: 2,
-    title: "NFL Prediction Engine",
-    desc: "ML ensemble predicting game outcomes with 71.4% accuracy using 8 seasons of play-by-play data.",
-    tags: ["Python", "Machine Learning"],
-    stack: ["Python", "XGBoost", "scikit-learn", "Pandas", "Streamlit"],
-    img: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=700&h=420&fit=crop&auto=format",
-    metrics: ["71.4% accuracy", "180+ features", "8 seasons data", "Live Streamlit app"],
-    detail: "Engineered 180+ features from play-by-play data. Random Forest, XGBoost, and Logistic Regression ensemble with Optuna hyperparameter tuning. Deployed as a Streamlit app with live odds comparison.",
-  },
-  {
-    id: 3,
-    title: "Customer Churn Predictor",
-    desc: "Logistic regression model reducing telecom churn by 23% after deployment in production A/B test.",
-    tags: ["Python", "Machine Learning", "SQL"],
-    stack: ["Python", "PostgreSQL", "scikit-learn", "SHAP", "FastAPI"],
-    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&h=420&fit=crop&auto=format",
-    metrics: ["23% churn reduction", "2.1M records", "SHAP explainability", "REST API"],
-    detail: "Processed 2.1M customer records from PostgreSQL. SHAP values surface key churn drivers. Deployed via FastAPI, integrated predictions into CRM dashboard for sales team actionability.",
-  },
-  {
-    id: 4,
-    title: "Revenue ETL Pipeline",
-    desc: "Airflow-orchestrated pipeline ingesting 6 SaaS sources into Snowflake — 500K daily records, 99.8% uptime.",
-    tags: ["Python", "SQL"],
-    stack: ["Python", "Snowflake", "dbt", "Airflow", "AWS S3"],
-    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&h=420&fit=crop&auto=format",
-    metrics: ["500K daily records", "6 data sources", "30+ dbt models", "99.8% uptime"],
-    detail: "Airflow DAGs orchestrating ingestion from Salesforce, HubSpot, Stripe, and 3 internal APIs into Snowflake. dbt transformation layer with 30+ models and comprehensive data quality tests.",
-  },
-  {
-    id: 5,
-    title: "Fantasy Football Optimizer",
-    desc: "Linear programming lineup optimizer achieving top-10% finish across 3 consecutive GPP tournaments.",
-    tags: ["Python", "Machine Learning"],
-    stack: ["Python", "PuLP", "Flask", "Pandas", "React"],
-    img: "https://images.unsplash.com/photo-1529900748604-07564a03e7a6?w=700&h=420&fit=crop&auto=format",
-    metrics: ["Top-10% GPP", "3 straight weeks", "LP optimization", "Web UI"],
-    detail: "DFS lineup selection formulated as an integer linear programming problem using PuLP. Scraped projections and ownership data, with Vegas lines for variance modeling. Deployed with a React frontend.",
-  },
-  {
-    id: 6,
-    title: "Marketing Attribution Model",
-    desc: "Shapley-value multi-touch attribution attributing $1.8M in revenue across 7 marketing channels.",
-    tags: ["Power BI", "Python", "SQL"],
-    stack: ["Power BI", "Python", "BigQuery", "DAX"],
-    img: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=700&h=420&fit=crop&auto=format",
-    metrics: ["$1.8M attributed", "7 channels", "Shapley values", "$340K rebalanced"],
-    detail: "Shapley value-based multi-touch attribution in Python, feeding results into Power BI executive dashboard. Replaced last-click model, rebalancing $340K in ad spend toward higher-performing channels.",
-  },
+    metrics: ["Community-driven", "3 User Roles", "Local Destinations", "Authentic Discovery"],
+    detail: "Built with HTML, CSS, JavaScript, PHP, and MySQL. Features three distinct user roles and focuses on connecting local travellers with authentic Sri Lankan destinations.",
+  }
 ];
 
-const FILTER_TAGS = ["All", "Python", "SQL", "Power BI", "Machine Learning"];
+const FILTER_TAGS = ["All", "Python", "SQL", "Java", "Power BI", "PHP"];
 
 const SKILLS = [
+  { label: "Java",             pct: 96, Icon: Code2 },
   { label: "SQL",              pct: 92, Icon: Database },
   { label: "Python",           pct: 88, Icon: Code2 },
-  { label: "Power BI / DAX",   pct: 85, Icon: BarChart3 },
-  { label: "Machine Learning", pct: 80, Icon: Cpu },
-  { label: "Statistics",       pct: 90, Icon: Layers },
+  { label: "Power BI / DAX",   pct: 71, Icon: BarChart3 },
+  { label: "Machine Learning", pct: 67, Icon: Cpu },
+  { label: "Statistics",       pct: 59, Icon: Layers },
 ];
 
 const TECH_TAGS = [
   { name: "Python",       note: "Primary language for ML, ETL, and analysis" },
   { name: "SQL",          note: "Advanced queries, window functions, stored procs" },
-  { name: "Power BI",     note: "DAX, data modeling, RLS, gateway config" },
+  { name: "Java",         note: "Object-oriented programming and application development" },
+  { name: "Power BI",     note: "Data modeling, DAX, and interactive dashboards" },
   { name: "Pandas",       note: "Data wrangling, aggregation, time-series" },
   { name: "scikit-learn", note: "Classification, regression, clustering pipelines" },
-  { name: "dbt",          note: "Transformation layer with testing & lineage docs" },
-  { name: "Airflow",      note: "DAG authoring and pipeline orchestration" },
-  { name: "Streamlit",    note: "Rapid ML model deployment" },
-  { name: "Snowflake",    note: "Cloud DW design and query optimization" },
-  { name: "XGBoost",      note: "Gradient boosting for tabular prediction" },
-  { name: "Azure ML",     note: "Model training, deployment, and monitoring" },
-  { name: "BigQuery",     note: "Large-scale analytical queries" },
+  { name: "MATLAB",       note: "Mathematical modeling and numerical computing" },
+  { name: "HTML/CSS",     note: "Web structure and styling" },
+  { name: "PHP",          note: "Server-side scripting and backend logic" },
+  { name: "MySQL",        note: "Relational database management" },
+  { name: "Git/GitHub",   note: "Version control and collaborative development" },
+  { name: "Docker",       note: "Containerization and environment reproducibility" },
 ];
 
 const TIMELINE: TimelineEntry[] = [
-  { year: "2025", role: "Senior Data Analyst", org: "FinTech Startup — Seattle, WA", type: "work",
-    desc: "Leading analytics for $12M ARR platform. Built real-time risk scoring model cutting fraud losses by 31%." },
-  { year: "2024", role: "Data Science Intern", org: "Microsoft — Redmond, WA", type: "work",
-    desc: "Azure ML team. Shipped a customer health scoring model impacting $50M pipeline. Stack: Python, Azure ML, Power BI." },
-  { year: "2023", role: "Analytics Intern", org: "Deloitte — Chicago, IL", type: "work",
-    desc: "Built client financial dashboards in Power BI. Automated weekly reporting pipeline saving 12 hrs/week." },
-  { year: "2022", role: "B.S. CS — Data Science Track", org: "University of Washington", type: "edu",
-    desc: "GPA 3.87. ML, Statistical Learning, Database Systems, Data Visualization. Graduating Spring 2026." },
-  { year: "2021", role: "Google Data Analytics Certificate", org: "Coursera", type: "award",
-    desc: "Completed professional certification. Projects in R, SQL, and Tableau with capstone business case study." },
+  { year: "2024–Present", role: "Finance Head, Career Gateway 1.0", org: "IEEE Student Branch, Uni. of Sri Jayewardenepura", type: "work",
+    desc: "Managing finances and budget allocation for the Career Gateway 1.0 initiative." },
+  { year: "2024–Present", role: "IEEE Student Branch Member", org: "IEEE, Uni. of Sri Jayewardenepura", type: "work",
+    desc: "Active member participating in technical and professional development events." },
+  { year: "2023–Present", role: "B.Sc. Applied Science (Maths, Physics & ICT)", org: "University of Sri Jayewardenepura", type: "edu",
+    desc: "Undergraduate degree focusing on Mathematics, Physics, and Information & Communication Technology." },
+  { year: "Sports", role: "Sports Representative", org: "University & Mercantile", type: "award",
+    desc: "University Cricket Team representative. University Baseball Team representative. Mercantile Cricket player." },
 ];
 
 const NAV_LINKS = ["Home", "About", "Projects", "Experience", "Contact"];
@@ -260,11 +209,11 @@ function FlipCard({ isDark, accentHex }: { isDark: boolean; accentHex: string })
         {/* Front */}
         <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl"
           style={{ backfaceVisibility: "hidden" }}>
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=520&fit=crop&auto=format"
-            alt="Alex Rivera — Data Scientist" className="w-full h-full object-cover" />
+          <img src="/profile_p.HEIC"
+            alt="Nirmal Colambage — Aspiring Data Scientist" className="w-full h-full object-cover" />
           <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${accentHex}60 0%, transparent 55%)` }} />
           <div className="absolute bottom-4 left-4 right-4">
-            <p className="text-white font-bold text-lg leading-tight" style={{ fontFamily: "'Outfit', sans-serif" }}>Alex Rivera</p>
+            <p className="text-white font-bold text-lg leading-tight" style={{ fontFamily: "'Outfit', sans-serif" }}>Nirmal Colambage</p>
             <p className="text-white/65 text-sm">Hover to flip →</p>
           </div>
           <div className="absolute top-3 right-3 px-2 py-1 rounded-lg text-xs font-bold"
@@ -276,19 +225,19 @@ function FlipCard({ isDark, accentHex }: { isDark: boolean; accentHex: string })
         <div className={`absolute inset-0 rounded-2xl p-6 flex flex-col gap-3 shadow-2xl ${isDark ? "bg-[#091629] border border-white/10" : "bg-white border border-slate-200"}`}
           style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}>
           <div className="mb-1">
-            <p className="font-extrabold text-xl" style={{ color: accentHex, fontFamily: "'Outfit', sans-serif" }}>Alex Rivera</p>
-            <p className={`text-sm ${isDark ? "text-white/55" : "text-slate-500"}`}>Data Scientist & Analyst</p>
+            <p className="font-extrabold text-xl" style={{ color: accentHex, fontFamily: "'Outfit', sans-serif" }}>Nirmal Colambage</p>
+            <p className={`text-sm ${isDark ? "text-white/55" : "text-slate-500"}`}>ICT Undergraduate & Aspiring Data Scientist</p>
           </div>
           {[
-            ["University", "UW Seattle"],
-            ["GPA", "3.87 / 4.00"],
-            ["Graduating", "Spring 2026"],
-            ["Open to", "DS Roles"],
-            ["Focus", "ML + BI + ETL"],
+            ["University", "Uni. of Sri Jayewardenepura"],
+            ["Degree", "B.Sc. Applied Science"],
+            ["Graduating", "2028"],
+            ["Open to", "DS / DA / BA Roles"],
+            ["Focus", "ML + SQL + Python"],
           ].map(([k, v]) => (
             <div key={k} className={`flex justify-between text-sm border-b pb-2 ${isDark ? "border-white/8" : "border-slate-100"}`}>
               <span className={isDark ? "text-white/45" : "text-slate-400"} style={{ fontFamily: "'DM Mono', monospace" }}>{k}</span>
-              <span className={`font-semibold ${isDark ? "text-white/90" : "text-slate-800"}`}>{v}</span>
+              <span className={`font-semibold text-right max-w-[60%] ${isDark ? "text-white/90" : "text-slate-800"}`}>{v}</span>
             </div>
           ))}
           <div className="flex gap-2 mt-auto">
@@ -490,13 +439,11 @@ function ProjectModal({ project, isDark, accentHex, onClose }: {
             ))}
           </div>
           <div className="flex gap-3">
-            <a href="#" className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold transition-colors"
+            <a href="https://github.com/ravinducolambage-hue" className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold transition-colors"
               style={{ background: accentHex, color: isDark ? "#040D1A" : "#fff" }}>
               <Github size={15} /> GitHub
             </a>
-            <a href="#" className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold border transition-colors ${isDark ? "border-white/15 text-white/75 hover:bg-white/8" : "border-slate-300 text-slate-700 hover:bg-slate-50"}`}>
-              <ExternalLink size={15} /> Live Demo
-            </a>
+            
           </div>
         </div>
       </motion.div>
@@ -669,7 +616,7 @@ function Navbar({ active, isDark, setIsDark, accent, setAccent }: {
         <button onClick={() => goto("home")}
           className={`text-lg font-extrabold tracking-tight ${isDark ? "text-white" : "text-slate-900"}`}
           style={{ fontFamily: "'Outfit', sans-serif" }}>
-          Alex<span style={{ color: accentHex }}>.</span>Rivera
+          Nirmal<span style={{ color: accentHex }}>.</span>Colambage
         </button>
 
         <div className="hidden md:flex items-center">
@@ -752,14 +699,14 @@ function HeroSection({ isDark, accent }: { isDark: boolean; accent: AccentKey })
             </span>
             <span className={`text-sm font-semibold ${isDark ? "text-white/55" : "text-slate-500"}`}
               style={{ fontFamily: "'DM Mono', monospace" }}>
-              Available for 2025 Internships
+              Open to Opportunities
             </span>
           </div>
           <h1 className={`text-5xl md:text-6xl xl:text-[5.5rem] font-extrabold leading-[1.02] tracking-tight mb-5 ${isDark ? "text-white" : "text-slate-900"}`}
             style={{ fontFamily: "'Outfit', sans-serif" }}>
             Hi, I'm{" "}
             <span style={{ color: accentHex, textShadow: `0 0 30px ${accentHex}60` }}>
-              Alex Rivera
+              Nirmal Colambage
             </span>
           </h1>
           <div className={`text-xl md:text-2xl font-semibold mb-7 min-h-[1.8em] flex items-center gap-1 ${isDark ? "text-white/55" : "text-slate-500"}`}
@@ -768,8 +715,7 @@ function HeroSection({ isDark, accent }: { isDark: boolean; accent: AccentKey })
             <span className="w-0.5 h-6 inline-block animate-pulse rounded-sm" style={{ background: accentHex }} />
           </div>
           <p className={`text-base leading-relaxed mb-10 max-w-md ${isDark ? "text-white/45" : "text-slate-500"}`}>
-            CS student at UW specializing in data science, ML, and business intelligence.
-            Turning raw data into decisions that matter.
+            ICT Undergraduate | Aspiring Data Scientist & AI Enthusiast
           </p>
           <div className="flex gap-4 flex-wrap mb-10">
             <MagneticBtn primary accentHex={accentHex} isDark={isDark} onClick={() => goto("projects")}>
@@ -781,9 +727,9 @@ function HeroSection({ isDark, accent }: { isDark: boolean; accent: AccentKey })
           </div>
           <div className="flex gap-5">
             {[
-              { Icon: Github, href: "#", label: "github" },
-              { Icon: Linkedin, href: "#", label: "linkedin" },
-              { Icon: Mail, href: "mailto:alex.rivera@uw.edu", label: "mail" },
+              { Icon: Github, href: "https://github.com/ravinducolambage-hue", label: "github" },
+              { Icon: Linkedin, href: "https://www.linkedin.com/in/nirmal-colambage/", label: "linkedin" },
+              { Icon: Mail, href: "mailto:ravinducolambage@gmail.com", label: "mail" },
             ].map(({ Icon, href, label }) => (
               <a key={label} href={href}
                 className={`transition-all duration-200 hover:scale-110 ${isDark ? "text-white/35 hover:text-white/80" : "text-slate-400 hover:text-slate-700"}`}

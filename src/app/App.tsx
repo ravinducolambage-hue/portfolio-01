@@ -312,7 +312,7 @@ function TechPill({ name, note, isDark }: { name: string; note: string; isDark: 
   const iconMap: Record<string, string> = {
     Python: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
     SQL: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-    "Power BI": "https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg",
+    "Power BI": "/icons/powerbi.png",
     Java: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
     Pandas: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg",
     "scikit-learn": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg",

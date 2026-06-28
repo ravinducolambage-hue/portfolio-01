@@ -308,6 +308,14 @@ function TechPill({ name, note, isDark }: { name: string; note: string; isDark: 
     Java: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
     "Machine Learning": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
     Statistics: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg",
+    Pandas: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg",
+    "scikit-learn": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sklearn/sklearn-original.svg",
+    MATLAB: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg",
+    "HTML/CSS": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+    PHP: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+    MySQL: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+    "Git/GitHub": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+    Docker: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
     // Add more mappings as needed
   };
   const iconSrc = iconMap[name] || "";
@@ -316,7 +324,7 @@ function TechPill({ name, note, isDark }: { name: string; note: string; isDark: 
       <div className={`px-3 py-1.5 rounded-lg text-xs font-semibold cursor-default transition-all duration-200 border ${
         isDark ? "bg-white/[0.07] border-white/[0.1] text-white/75 hover:bg-white/[0.14]" : "bg-white/80 border-slate-200 text-slate-700 hover:bg-slate-50"
       }`}>
-        {iconSrc ? <img src={iconSrc} alt={name} className="h-5 w-5 inline-block" /> : name}
+        {iconSrc ? <img src={iconSrc} alt={name} className="h-6 w-6 inline-block" /> : name}
       </div>
       <AnimatePresence>
         {show && (

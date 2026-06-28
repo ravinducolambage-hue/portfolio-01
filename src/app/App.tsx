@@ -326,9 +326,9 @@ function TechPill({ name, note, isDark }: { name: string; note: string; isDark: 
   const iconSrc = iconMap[name] || "";
   return (
     <div className="relative" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
-      <div className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold cursor-default transition-all duration-200 border ${isDark ? "bg-white/[0.07] border-white/[0.1] text-white/75 hover:bg-white/[0.14]" : "bg-white/80 border-slate-200 text-slate-700 hover:bg-slate-50"
+      <div className={`flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-sm font-semibold cursor-default transition-all duration-200 border ${isDark ? "bg-white/[0.07] border-white/[0.1] text-white/75 hover:bg-white/[0.14]" : "bg-white/80 border-slate-200 text-slate-700 hover:bg-slate-50"
         }`}>
-        {iconSrc && <img src={iconSrc} alt={name} className="h-5 w-5 flex-shrink-0" />}
+        {iconSrc && <img src={iconSrc} alt="" className="h-7 w-7 flex-shrink-0" />}
         <span>{name}</span>
       </div>
       <AnimatePresence>
@@ -645,8 +645,8 @@ function Navbar({ active, isDark, setIsDark, accent, setAccent }: {
             return (
               <button key={item} onClick={() => goto(id)}
                 className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 ${isDark
-                    ? isActive ? "text-white" : "text-white/50 hover:text-white/85"
-                    : isActive ? "text-slate-900" : "text-slate-500 hover:text-slate-800"
+                  ? isActive ? "text-white" : "text-white/50 hover:text-white/85"
+                  : isActive ? "text-slate-900" : "text-slate-500 hover:text-slate-800"
                   }`}
                 style={{ fontFamily: "'Outfit', sans-serif" }}>
                 {item}

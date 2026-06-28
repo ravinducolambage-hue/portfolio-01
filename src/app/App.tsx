@@ -81,7 +81,7 @@ const TIMELINE: TimelineEntry[] = [
     desc: "Managing finances and budget allocation for the Career Gateway 1.0 initiative." },
   { year: "2024–Present", role: "IEEE Student Branch Member", org: "IEEE, Uni. of Sri Jayewardenepura", type: "work",
     desc: "Active member participating in technical and professional development events." },
-  { year: "2023–Present", role: "B.Sc. Applied Science (Maths, Physics & ICT)", org: "University of Sri Jayewardenepura", type: "edu",
+  { year: "2023–Present", role: "Information and Communication Technology (ICT) – B.Sc. (General)", org: "University of Sri Jayewardenepura", type: "edu",
     desc: "Undergraduate degree focusing on Mathematics, Physics, and Information & Communication Technology." },
   { year: "Sports", role: "Sports Representative", org: "University & Mercantile", type: "award",
     desc: "University Cricket Team representative. University Baseball Team representative. Mercantile Cricket player." },
@@ -230,7 +230,7 @@ function FlipCard({ isDark, accentHex }: { isDark: boolean; accentHex: string })
           </div>
           {[
             ["University", "Uni. of Sri Jayewardenepura"],
-            ["Degree", "B.Sc. Applied Science"],
+            ["Degree", "Information and Communication Technology (ICT) – B.Sc. (General)"],
             ["Graduating", "2028"],
             ["Open to", "DS / DA / BA Roles"],
             ["Focus", "ML + SQL + Python"],
@@ -439,7 +439,7 @@ function ProjectModal({ project, isDark, accentHex, onClose }: {
             ))}
           </div>
           <div className="flex gap-3">
-            <a href="https://github.com/ravinducolambage-hue" className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold transition-colors"
+            <a href="https://github.com/Chethiya4/FinalProject" className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold transition-colors"
               style={{ background: accentHex, color: isDark ? "#040D1A" : "#fff" }}>
               <Github size={15} /> GitHub
             </a>
@@ -838,11 +838,11 @@ function ProjectsSection({ isDark, accent }: { isDark: boolean; accent: AccentKe
   return (
     <section id="projects" className="py-24">
       <div className="max-w-7xl mx-auto px-6">
-        <SectionLabel text="§03 — Projects" hex={accentHex} />
+        <SectionLabel text="§03 — Full Stack Projects" hex={accentHex} />
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
           <h2 className={`text-4xl md:text-5xl font-extrabold ${isDark ? "text-white" : "text-slate-900"}`}
             style={{ fontFamily: "'Outfit', sans-serif" }}>
-            Data Science Showcase
+            Full Stack Projects
           </h2>
           <a href="#" className={`flex items-center gap-1.5 text-sm font-semibold transition-colors ${isDark ? "text-white/45 hover:text-white/80" : "text-slate-400 hover:text-slate-700"}`}>
             <Github size={16} /> View all on GitHub
@@ -929,9 +929,9 @@ function ContactSection({ isDark, accent }: { isDark: boolean; accent: AccentKey
               I respond within 24 hours.
             </p>
             {[
-              { Icon: Mail, label: "Email", value: "alex.rivera@uw.edu", href: "mailto:alex.rivera@uw.edu" },
-              { Icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/alexrivera", href: "#" },
-              { Icon: Github, label: "GitHub", value: "github.com/alexrivera-ds", href: "#" },
+              { Icon: Mail, label: "Email", value: "ravinducolambage@gmail.com", href: "mailto:ravinducolambage@gmail.com" },
+              { Icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/nirmal-colambage", href: "https://www.linkedin.com/in/nirmal-colambage/" },
+              { Icon: Github, label: "GitHub", value: "github.com/ravinducolambage-hue", href: "https://github.com/ravinducolambage-hue" },
             ].map(({ Icon, label, value, href }) => (
               <a key={label} href={href}
                 className={`flex items-center gap-4 py-4 border-b group ${isDark ? "border-white/[0.07]" : "border-slate-100"}`}>

@@ -798,9 +798,9 @@ function AboutSection({ isDark, accent }: { isDark: boolean; accent: AccentKey }
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            {[["15+", "Projects Shipped"], ["2", "Internships"], ["3.5K+", "Users Reached"], ["3.87", "GPA"]].map(([v, l]) => (
+            {[["1", "Projects"], ["Still Searching", "Internships"], ["1.3K", "Users Reached"], ["Still Graduating", "GPA"]].map(([v, l]) => (
               <div key={l} className={`p-5 rounded-2xl border shadow-md ${glassCard(isDark)}`}>
-                <p className="text-3xl font-extrabold mb-1" style={{ color: accentHex, fontFamily: "'Outfit', sans-serif" }}>{v}</p>
+                <p className={`${v.length > 5 ? "text-xl sm:text-2xl" : "text-3xl"} font-extrabold mb-1`} style={{ color: accentHex, fontFamily: "'Outfit', sans-serif" }}>{v}</p>
                 <p className={`text-sm ${isDark ? "text-white/55" : "text-slate-500"}`}>{l}</p>
               </div>
             ))}

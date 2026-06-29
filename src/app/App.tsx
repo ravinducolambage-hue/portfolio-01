@@ -40,13 +40,24 @@ interface Project {
   img: string;
   metrics: string[];
   detail: string;
+  category: string[];
+}
+interface TimelineSubEntry {
+  role: string;
+  period: string;
 }
 interface TimelineEntry {
   year: string;
   role: string;
   org: string;
-  type: "work" | "edu" | "award";
+  type: "work" | "edu" | "award" | "sports";
   desc: string;
+  subEntries?: TimelineSubEntry[];
+}
+interface TimelineGroup {
+  category: string;
+  icon: "work" | "edu" | "award" | "sports";
+  entries: TimelineEntry[];
 }
 type ContactFormData = {
   name: string;
@@ -103,16 +114,50 @@ const PROJECTS: Project[] = [
     ],
     detail:
       "Built with HTML, CSS, JavaScript, PHP, and MySQL. Features three distinct user roles and focuses on connecting local travellers with authentic Sri Lankan destinations.",
+    category: ["Full Stack"],
+  },
+  {
+    id: 2,
+    title: "Logistic Management System",
+    desc: "A comprehensive Java-based logistics management system for tracking shipments, inventory, and supply chain operations.",
+    tags: ["Java", "OOP", "JDBC"],
+    stack: ["Java", "MySQL", "JDBC", "Swing"],
+    img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=700&h=420&fit=crop&auto=format",
+    metrics: [
+      "Inventory Tracking",
+      "Shipment Logs",
+      "Supply Chain",
+      "Java OOP",
+    ],
+    detail:
+      "A Java desktop application for managing logistics operations. Built with Object-Oriented Programming principles, it features shipment tracking, inventory management, and comprehensive reporting through a Swing UI with MySQL backend.",
+    category: ["Java"],
+  },
+  {
+    id: 3,
+    title: "Sales Management System",
+    desc: "An object-oriented sales management system designed to streamline product tracking, invoicing, and sales reporting.",
+    tags: ["Python", "OOP", "SQLite"],
+    stack: ["Python", "SQLite", "Tkinter"],
+    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&h=420&fit=crop&auto=format",
+    metrics: [
+      "OOP Design",
+      "Sales Analytics",
+      "Invoice Generation",
+      "Product Tracking",
+    ],
+    detail:
+      "A Python-based sales management system applying OOP design patterns. Features product and customer management, invoice generation, and a sales analytics dashboard built with Tkinter and SQLite.",
+    category: ["OOP"],
   },
 ];
 
 const FILTER_TAGS = [
   "All",
-  "Python",
-  "SQL",
+  "Full Stack",
+  "OOP",
   "Java",
-  "Power BI",
-  "PHP",
+  "DevOps",
 ];
 
 const SKILLS = [
@@ -169,34 +214,76 @@ const TECH_TAGS = [
   },
 ];
 
-const TIMELINE: TimelineEntry[] = [
+const TIMELINE_GROUPS: TimelineGroup[] = [
   {
-    year: "2024–Present",
-    role: "Finance Head, Career Gateway 1.0",
-    org: "IEEE Student Branch, Uni. of Sri Jayewardenepura",
-    type: "work",
-    desc: "Managing finances and budget allocation for the Career Gateway 1.0 initiative.",
+    category: "Work Experience",
+    icon: "work",
+    entries: [
+      {
+        year: "2024–Present",
+        role: "Assistant Sales Manager",
+        org: "Power Hands Plantation PVT LTD",
+        type: "work",
+        desc: "Progressed through sales ranks, now leading a team as Assistant Sales Manager. Also representing the company in Mercantile Cricket.",
+        subEntries: [
+          { role: "Senior Sales Executive", period: "Aug 2024 – Dec 2025" },
+          { role: "Assistant Sales Manager", period: "Jan 2026 – Present" },
+        ],
+      },
+    ],
   },
   {
-    year: "2024–Present",
-    role: "IEEE Student Branch Member",
-    org: "IEEE, Uni. of Sri Jayewardenepura",
-    type: "work",
-    desc: "Active member participating in technical and professional development events.",
+    category: "Higher Education",
+    icon: "edu",
+    entries: [
+      {
+        year: "2026–Present",
+        role: "Information and Communication Technology (ICT) – B.Sc. (General)",
+        org: "University of Sri Jayewardenepura",
+        type: "edu",
+        desc: "Undergraduate degree focusing on Mathematics, Physics, and Information & Communication Technology.",
+      },
+    ],
   },
   {
-    year: "2023–Present",
-    role: "Information and Communication Technology (ICT) – B.Sc. (General)",
-    org: "University of Sri Jayewardenepura",
-    type: "edu",
-    desc: "Undergraduate degree focusing on Mathematics, Physics, and Information & Communication Technology.",
+    category: "Extra-Curricular & Leadership",
+    icon: "award",
+    entries: [
+      {
+        year: "2024–Present",
+        role: "Finance Head – Career Gateway 1.0",
+        org: "IEEE Student Branch of USJP",
+        type: "award",
+        desc: "Active member of the IEEE society, having worked on multiple projects across different teams. Currently serving as the Finance Head for the \"Career Gateway 1.0\" project, leading a dedicated team toward achieving specific financial goals.",
+      },
+    ],
   },
   {
-    year: "Sports",
-    role: "Sports Representative",
-    org: "University & Mercantile",
-    type: "award",
-    desc: "University Cricket Team representative. University Baseball Team representative. Mercantile Cricket player.",
+    category: "Sports Background",
+    icon: "sports",
+    entries: [
+      {
+        year: "2022–2024",
+        role: "1st XI Cricketer & Vice-Captain",
+        org: "Pannipitiya Dharmapala College",
+        type: "sports",
+        desc: "Represented the 1st XI Division 1 Cricket team for 3 seasons (2022–2024). Served as Vice-Captain during the final 2023/24 season.",
+      },
+      {
+        year: "2025–Present",
+        role: "University Cricket & Baseball",
+        org: "University of Sri Jayewardenepura",
+        type: "sports",
+        desc: "Member of the University Cricket Team (2025–Present) and Member of the University Baseball Team (2026–Present).",
+      },
+      {
+        year: "Ongoing",
+        role: "Mercantile Cricket",
+        org: "Power Hands Plantation PVT LTD",
+        type: "sports",
+        desc: "Representing Power Hands Plantation PVT LTD in Division D tournaments conducted by the Mercantile Cricket Association (MCA).",
+      },
+    ],
   },
 ];
 
@@ -944,11 +1031,13 @@ function TimelineNode({
   index,
   isDark,
   accentHex,
+  isLast,
 }: {
   entry: TimelineEntry;
   index: number;
   isDark: boolean;
   accentHex: string;
+  isLast?: boolean;
 }) {
   const { ref, inView } = useInView(0.2);
   const Icon =
@@ -956,7 +1045,9 @@ function TimelineNode({
       ? Briefcase
       : entry.type === "edu"
         ? GraduationCap
-        : Award;
+        : entry.type === "sports"
+          ? Award
+          : Award;
   return (
     <div
       ref={ref}
@@ -971,7 +1062,7 @@ function TimelineNode({
     >
       <div className="flex flex-col items-center">
         <div
-          className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 border-2 transition-all duration-600"
+          className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 border-2 transition-all duration-600"
           style={{
             borderColor: inView ? accentHex : "transparent",
             background: inView
@@ -980,30 +1071,32 @@ function TimelineNode({
                 ? "#0E2040"
                 : "#EEF2F8",
             boxShadow: inView
-              ? `0 0 18px ${accentHex}45`
+              ? `0 0 14px ${accentHex}45`
               : "none",
           }}
         >
-          <Icon size={15} style={{ color: accentHex }} />
+          <Icon size={13} style={{ color: accentHex }} />
         </div>
-        <div
-          className="flex-1 w-px mt-2 min-h-[52px]"
-          style={{
-            background: `linear-gradient(to bottom, ${accentHex}45, transparent)`,
-          }}
-        />
+        {!isLast && (
+          <div
+            className="flex-1 w-px mt-2 min-h-[44px]"
+            style={{
+              background: `linear-gradient(to bottom, ${accentHex}40, transparent)`,
+            }}
+          />
+        )}
       </div>
-      <div className="pb-10 flex-1">
+      <div className="pb-8 flex-1">
         <div className="flex items-start justify-between gap-4 flex-wrap mb-1.5">
           <div>
             <h4
-              className={`font-bold text-base ${isDark ? "text-white" : "text-slate-900"}`}
+              className={`font-bold text-sm ${isDark ? "text-white" : "text-slate-900"}`}
               style={{ fontFamily: "'Outfit', sans-serif" }}
             >
               {entry.role}
             </h4>
             <p
-              className="text-sm font-semibold"
+              className="text-xs font-semibold mt-0.5"
               style={{ color: accentHex }}
             >
               {entry.org}
@@ -1021,10 +1114,106 @@ function TimelineNode({
           </span>
         </div>
         <p
-          className={`text-sm leading-relaxed ${isDark ? "text-white/55" : "text-slate-500"}`}
+          className={`text-xs leading-relaxed mb-3 ${isDark ? "text-white/55" : "text-slate-500"}`}
         >
           {entry.desc}
         </p>
+        {entry.subEntries && entry.subEntries.length > 0 && (
+          <div className="space-y-1.5 mt-2">
+            {entry.subEntries.map((sub) => (
+              <div
+                key={sub.role}
+                className={`flex items-center gap-2 text-xs px-3 py-2 rounded-lg border-l-2`}
+                style={{
+                  borderLeftColor: accentHex,
+                  background: isDark ? `${accentHex}08` : `${accentHex}0A`,
+                }}
+              >
+                <span
+                  className={`font-semibold ${isDark ? "text-white/80" : "text-slate-700"}`}
+                  style={{ fontFamily: "'Outfit', sans-serif" }}
+                >
+                  {sub.role}
+                </span>
+                <span
+                  className={`ml-auto font-mono text-xs ${isDark ? "text-white/40" : "text-slate-400"}`}
+                >
+                  {sub.period}
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// ─── TIMELINE GROUP ───────────────────────────────────────────────────────────
+
+function TimelineGroupSection({
+  group,
+  groupIndex,
+  isDark,
+  accentHex,
+}: {
+  group: TimelineGroup;
+  groupIndex: number;
+  isDark: boolean;
+  accentHex: string;
+}) {
+  const { ref, inView } = useInView(0.15);
+  const GroupIcon =
+    group.icon === "work"
+      ? Briefcase
+      : group.icon === "edu"
+        ? GraduationCap
+        : group.icon === "sports"
+          ? Award
+          : Award;
+
+  return (
+    <div
+      ref={ref}
+      className="mb-10 transition-all duration-700"
+      style={{
+        opacity: inView ? 1 : 0,
+        transform: inView ? "translateY(0)" : "translateY(32px)",
+        transitionDelay: `${groupIndex * 100}ms`,
+      }}
+    >
+      {/* Category heading */}
+      <div className="flex items-center gap-3 mb-6">
+        <div
+          className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0"
+          style={{ background: `${accentHex}22`, border: `1.5px solid ${accentHex}55` }}
+        >
+          <GroupIcon size={14} style={{ color: accentHex }} />
+        </div>
+        <h3
+          className={`text-sm font-extrabold uppercase tracking-[0.15em] ${isDark ? "text-white/70" : "text-slate-600"}`}
+          style={{ fontFamily: "'DM Mono', monospace" }}
+        >
+          {group.category}
+        </h3>
+        <div
+          className="flex-1 h-px"
+          style={{ background: `linear-gradient(to right, ${accentHex}40, transparent)` }}
+        />
+      </div>
+
+      {/* Entries */}
+      <div className="pl-4">
+        {group.entries.map((entry, i) => (
+          <TimelineNode
+            key={entry.year + entry.role}
+            entry={entry}
+            index={i}
+            isDark={isDark}
+            accentHex={accentHex}
+            isLast={i === group.entries.length - 1}
+          />
+        ))}
       </div>
     </div>
   );
@@ -1732,13 +1921,13 @@ function ProjectsSection({
   const filtered =
     tag === "All"
       ? PROJECTS
-      : PROJECTS.filter((p) => p.tags.includes(tag));
+      : PROJECTS.filter((p) => p.category.includes(tag));
 
   return (
     <section id="projects" className="py-24">
       <div className="max-w-7xl mx-auto px-6">
         <SectionLabel
-          text="§03 — Full Stack Projects"
+          text="§03 — Projects"
           hex={accentHex}
         />
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
@@ -1746,7 +1935,7 @@ function ProjectsSection({
             className={`text-4xl md:text-5xl font-extrabold ${isDark ? "text-white" : "text-slate-900"}`}
             style={{ fontFamily: "'Outfit', sans-serif" }}
           >
-            Full Stack Projects
+            Projects
           </h2>
           <a
             href="#"
@@ -1849,11 +2038,11 @@ function ExperienceSection({
           Career Roadmap
         </h2>
         <div>
-          {TIMELINE.map((entry, i) => (
-            <TimelineNode
-              key={entry.year + entry.role}
-              entry={entry}
-              index={i}
+          {TIMELINE_GROUPS.map((group, i) => (
+            <TimelineGroupSection
+              key={group.category}
+              group={group}
+              groupIndex={i}
               isDark={isDark}
               accentHex={accentHex}
             />

@@ -27,9 +27,7 @@ import {
 
 // ─── TYPES ────────────────────────────────────────────────────────────────────
 
-// ─── TYPES ────────────────────────────────────────────────────────────────────
-
-type AccentKey = "teal" | "python" | "powerbi";
+type AccentKey = "teal" | "python";
 
 interface Project {
   id: number;
@@ -74,19 +72,14 @@ const ACCENTS: Record<
   { label: string; hex: string; glow: string }
 > = {
   teal: {
-    label: "DS Teal",
+    label: "Mint Green",
     hex: "#00D4B1",
     glow: "rgba(0,212,177,0.18)",
   },
   python: {
-    label: "Python",
-    hex: "#F4C430",
-    glow: "rgba(244,196,48,0.18)",
-  },
-  powerbi: {
-    label: "Power BI",
-    hex: "#F2A900",
-    glow: "rgba(242,169,0,0.18)",
+    label: "Python Blue",
+    hex: "#3776AB",
+    glow: "rgba(55,118,171,0.18)",
   },
 };
 
@@ -523,7 +516,7 @@ function FlipCard({
           style={{ backfaceVisibility: "hidden" }}
         >
           <img
-            src="/profile_p.HEIC"
+            src="/profile_p.jpg"
             alt="Nirmal Colambage — Aspiring Data Scientist"
             className="w-full h-full object-cover"
           />
@@ -724,7 +717,8 @@ function TechPill({
     Python:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
     SQL: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-    "Power BI": "/icons/powerbi.png",
+    "Power BI":
+      "https://img.icons8.com/color/96/power-bi.png",
     Java: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
     "VS Code":
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
@@ -752,8 +746,8 @@ function TechPill({
       {/* Circular icon */}
       <div
         className={`w-20 h-20 rounded-2xl flex items-center justify-center border-2 transition-all duration-200 group-hover:scale-110 group-hover:border-opacity-80 ${isDark
-            ? "bg-white/[0.07] border-white/[0.12] group-hover:bg-white/[0.14]"
-            : "bg-white/80 border-slate-200 group-hover:bg-slate-50"
+          ? "bg-white/[0.07] border-white/[0.12] group-hover:bg-white/[0.14]"
+          : "bg-white/80 border-slate-200 group-hover:bg-slate-50"
           }`}
       >
         {iconSrc ? (
@@ -787,8 +781,8 @@ function TechPill({
             exit={{ opacity: 0, y: 6, scale: 0.94 }}
             transition={{ duration: 0.13 }}
             className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-2.5 px-3 py-2 rounded-xl text-xs w-52 text-center z-20 shadow-2xl border ${isDark
-                ? "bg-[#0D2044] border-white/15 text-white/80"
-                : "bg-white border-slate-200/80 text-slate-600"
+              ? "bg-[#0D2044] border-white/15 text-white/80"
+              : "bg-white border-slate-200/80 text-slate-600"
               }`}
           >
             {note}
@@ -925,8 +919,8 @@ function ProjectModal({
           stiffness: 320,
         }}
         className={`relative max-w-2xl w-full max-h-[90vh] overflow-y-auto rounded-2xl border ${isDark
-            ? "bg-[#071220] border-white/[0.1]"
-            : "bg-white border-slate-200"
+          ? "bg-[#071220] border-white/[0.1]"
+          : "bg-white border-slate-200"
           }`}
         style={{ boxShadow: `0 32px 90px ${accentHex}28` }}
         onClick={(e) => e.stopPropagation()}
@@ -1470,8 +1464,8 @@ function Navbar({
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-          ? `${isDark ? "bg-[#040D1A]/85 border-b border-white/[0.08]" : "bg-white/85 border-b border-slate-200/60"} backdrop-blur-2xl py-3`
-          : "py-5"
+        ? `${isDark ? "bg-[#040D1A]/85 border-b border-white/[0.08]" : "bg-white/85 border-b border-slate-200/60"} backdrop-blur-2xl py-3`
+        : "py-5"
         }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -1493,12 +1487,12 @@ function Navbar({
                 key={item}
                 onClick={() => goto(id)}
                 className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 ${isDark
-                    ? isActive
-                      ? "text-white"
-                      : "text-white/50 hover:text-white/85"
-                    : isActive
-                      ? "text-slate-900"
-                      : "text-slate-500 hover:text-slate-800"
+                  ? isActive
+                    ? "text-white"
+                    : "text-white/50 hover:text-white/85"
+                  : isActive
+                    ? "text-slate-900"
+                    : "text-slate-500 hover:text-slate-800"
                   }`}
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
@@ -1531,9 +1525,9 @@ function Navbar({
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.9, y: -6 }}
                   transition={{ duration: 0.15 }}
-                  className={`absolute right-0 top-10 rounded-xl p-2.5 flex flex-col gap-1 min-w-[130px] shadow-2xl border ${isDark
-                      ? "bg-[#0A1C30] border-white/[0.1]"
-                      : "bg-white border-slate-200"
+                  className={`absolute right-0 top-10 rounded-xl p-2.5 flex flex-col gap-1 min-w-[140px] shadow-2xl border ${isDark
+                    ? "bg-[#0A1C30] border-white/[0.1]"
+                    : "bg-white border-slate-200"
                     }`}
                 >
                   {(Object.keys(ACCENTS) as AccentKey[]).map(
@@ -1545,12 +1539,12 @@ function Navbar({
                           setAccentOpen(false);
                         }}
                         className={`flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold transition-colors ${accent === k
-                            ? isDark
-                              ? "bg-white/10"
-                              : "bg-slate-100"
-                            : isDark
-                              ? "hover:bg-white/6"
-                              : "hover:bg-slate-50"
+                          ? isDark
+                            ? "bg-white/10"
+                            : "bg-slate-100"
+                          : isDark
+                            ? "hover:bg-white/6"
+                            : "hover:bg-slate-50"
                           } ${isDark ? "text-white/80" : "text-slate-700"}`}
                       >
                         <span
@@ -2175,13 +2169,13 @@ function Footer({
           className={`text-xs ${isDark ? "text-white/30" : "text-slate-400"}`}
           style={{ fontFamily: "'DM Mono', monospace" }}
         >
-          © 2025 Alex Rivera — Built with React + Tailwind
+          © 2025 Nirmal Colambage — Built with React + Tailwind
         </p>
         <p
           className={`text-xs ${isDark ? "text-white/30" : "text-slate-400"}`}
           style={{ fontFamily: "'DM Mono', monospace" }}
         >
-          Seattle, WA · UW Class of 2026
+          Sri Lanka · USJ Class of 2028
         </p>
       </div>
       <AnimatePresence>

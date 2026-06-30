@@ -39,6 +39,7 @@ interface Project {
   metrics: string[];
   detail: string;
   category: string[];
+  github?: string;
 }
 interface TimelineSubEntry {
   role: string;
@@ -125,6 +126,7 @@ const PROJECTS: Project[] = [
     detail:
       "A Java desktop application for managing logistics operations. Built with Object-Oriented Programming principles, it features shipment tracking, inventory management, and comprehensive reporting through a Swing UI with MySQL backend.",
     category: ["Java"],
+    github: "https://github.com/ravinducolambage-hue/Logistics-Management-System",
   },
   {
     id: 3,
@@ -142,6 +144,7 @@ const PROJECTS: Project[] = [
     detail:
       "A Python-based sales management system applying OOP design patterns. Features product and customer management, invoice generation, and a sales analytics dashboard built with Tkinter and SQLite.",
     category: ["OOP"],
+    github: "https://github.com/ravinducolambage-hue/Sales-Management-System",
   },
 ];
 
@@ -1005,16 +1008,20 @@ function ProjectModal({
             ))}
           </div>
           <div className="flex gap-3">
-            <a
-              href="https://github.com/Chethiya4/FinalProject"
-              className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold transition-colors"
-              style={{
-                background: accentHex,
-                color: isDark ? "#040D1A" : "#fff",
-              }}
-            >
-              <Github size={15} /> GitHub
-            </a>
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold transition-colors"
+                style={{
+                  background: accentHex,
+                  color: isDark ? "#040D1A" : "#fff",
+                }}
+              >
+                <Github size={15} /> GitHub
+              </a>
+            )}
           </div>
         </div>
       </motion.div>

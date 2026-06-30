@@ -2078,53 +2078,55 @@ function ArticlesSection({
           My Writing
         </h2>
         
-        <div className="grid gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           <a 
             href="https://medium.com/@ravinducolambage/bridging-the-gap-integrating-sql-and-python-for-data-driven-web-applications-93c76565b56d?sharedUserId=ravinducolambage"
             target="_blank"
             rel="noopener noreferrer"
-            className={`block overflow-hidden rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group ${glassCard(isDark)}`}
+            className={`flex flex-col overflow-hidden rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group ${glassCard(isDark)}`}
           >
-            <div className="flex flex-col md:flex-row h-full">
-              {/* Image Section */}
-              <div className="relative w-full md:w-2/5 h-56 md:h-auto overflow-hidden bg-slate-800 shrink-0">
-                <img 
-                  src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop&auto=format" 
-                  alt="Web Development with Python and SQL"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div 
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
-                  style={{ background: `${accentHex}35` }}
-                >
-                  <ExternalLink size={28} className="text-white drop-shadow-lg" />
-                </div>
+            {/* Image Section */}
+            <div className="relative h-60 w-full overflow-hidden bg-slate-800 shrink-0 border-b border-white/[0.05]">
+              <img 
+                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop&auto=format" 
+                alt="Web Development with Python and SQL"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div 
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                style={{ background: `${accentHex}35` }}
+              >
+                <ExternalLink size={28} className="text-white drop-shadow-lg" />
               </div>
-              {/* Content Section */}
-              <div className="p-6 md:p-8 flex flex-col justify-center grow">
-                <div className="flex items-center justify-between mb-3">
-                  <p 
-                    className="text-sm font-bold tracking-widest uppercase"
-                    style={{ color: accentHex, fontFamily: "'DM Mono', monospace" }}
-                  >
-                    Medium Article
-                  </p>
-                  <div 
-                    className="w-10 h-10 rounded-full flex md:hidden items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110"
-                    style={{ background: `${accentHex}18` }}
-                  >
-                    <ExternalLink size={16} style={{ color: accentHex }} />
-                  </div>
-                </div>
-                <h3 
-                  className={`text-2xl font-bold mb-3 transition-colors ${isDark ? "text-white group-hover:text-white/80" : "text-slate-900 group-hover:text-slate-700"}`}
-                  style={{ fontFamily: "'Outfit', sans-serif" }}
+            </div>
+            
+            {/* Content Section */}
+            <div className="p-6 md:p-8 flex flex-col flex-grow">
+              <h3 
+                className={`text-xl font-bold mb-4 transition-colors ${isDark ? "text-white group-hover:text-white/80" : "text-slate-900 group-hover:text-slate-700"}`}
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+              >
+                Bridging the Gap: Integrating SQL and Python for Data-Driven Web Applications
+              </h3>
+              <p className={`text-sm leading-relaxed mb-8 ${isDark ? "text-white/65" : "text-slate-600"}`}>
+                A comprehensive guide on combining the power of SQL databases with Python backends to create robust, data-driven web applications.
+              </p>
+              
+              {/* Button */}
+              <div className="mt-auto">
+                <div 
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-colors"
+                  style={{
+                    background: isDark ? "#000" : "#111",
+                    color: "#fff",
+                    border: isDark ? "1px solid rgba(255,255,255,0.15)" : "none",
+                  }}
                 >
-                  Bridging the Gap: Integrating SQL and Python for Data-Driven Web Applications
-                </h3>
-                <p className={`text-base leading-relaxed ${isDark ? "text-white/65" : "text-slate-600"}`}>
-                  A comprehensive guide on combining the power of SQL databases with Python backends to create robust, data-driven web applications.
-                </p>
+                  <svg viewBox="0 0 1043.63 592.71" className="w-4 h-4 fill-current">
+                    <path d="M588.67 296.36c0 163.67-131.78 296.35-294.33 296.35S0 460 0 296.36 131.78 0 294.34 0s294.33 132.69 294.33 296.36M911.56 296.36c0 154.06-65.89 279-147.17 279s-147.17-124.94-147.17-279 65.88-279 147.16-279 147.17 124.9 147.17 279M1043.63 296.36c0 138-23.17 249.94-51.76 249.94s-51.75-111.91-51.75-249.94 23.17-249.94 51.75-249.94 51.76 111.9 51.76 249.94"/>
+                  </svg>
+                  Read on Medium
+                </div>
               </div>
             </div>
           </a>

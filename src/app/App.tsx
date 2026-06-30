@@ -516,7 +516,7 @@ function FlipCard({
           style={{ backfaceVisibility: "hidden" }}
         >
           <img
-            src="/profile_p.jpg"
+            src="/profile_p.png"
             alt="Nirmal Colambage — Aspiring Data Scientist"
             className="w-full h-full object-cover"
           />

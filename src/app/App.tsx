@@ -244,8 +244,8 @@ const TIMELINE_GROUPS: TimelineGroup[] = [
     entries: [
       {
         year: "2024–Present",
-        role: "Finance Head – Career Gateway 1.0",
-        org: "IEEE Student Branch of USJP",
+        role: "Member of IEEE,",
+        org: "IEEE student branch of USJP",
         type: "award",
         desc: "Active member of the IEEE society, having worked on multiple projects across different teams. Currently serving as the Finance Head for the \"Career Gateway 1.0\" project, leading a dedicated team toward achieving specific financial goals.",
       },

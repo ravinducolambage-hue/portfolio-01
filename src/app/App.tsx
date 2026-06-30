@@ -1804,7 +1804,7 @@ function AboutSection({
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6">
-        <SectionLabel text="§02 — About" hex={accentHex} />
+        <SectionLabel text="About" hex={accentHex} />
         <h2
           className={`text-4xl md:text-5xl font-extrabold mb-14 ${isDark ? "text-white" : "text-slate-900"}`}
           style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -1932,7 +1932,7 @@ function ProjectsSection({
     <section id="projects" className="py-24">
       <div className="max-w-7xl mx-auto px-6">
         <SectionLabel
-          text="§03 — Projects"
+          text="Projects"
           hex={accentHex}
         />
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
@@ -2035,7 +2035,7 @@ function ExperienceSection({
   return (
     <section id="experience" className="py-24">
       <div className="max-w-3xl mx-auto px-6">
-        <SectionLabel text="§04 — Experience" hex={accentHex} />
+        <SectionLabel text="Experience" hex={accentHex} />
         <h2
           className={`text-4xl md:text-5xl font-extrabold mb-14 ${isDark ? "text-white" : "text-slate-900"}`}
           style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -2069,7 +2069,7 @@ function ContactSection({
   return (
     <section id="contact" className="py-24">
       <div className="max-w-5xl mx-auto px-6">
-        <SectionLabel text="§05 — Contact" hex={accentHex} />
+        <SectionLabel text="Contact" hex={accentHex} />
         <h2
           className={`text-4xl md:text-5xl font-extrabold mb-14 ${isDark ? "text-white" : "text-slate-900"}`}
           style={{ fontFamily: "'Outfit', sans-serif" }}

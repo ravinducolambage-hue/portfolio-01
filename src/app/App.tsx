@@ -513,17 +513,21 @@ function FlipCard({
         {/* Front */}
         <div
           className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl"
-          style={{ backfaceVisibility: "hidden" }}
+          style={{
+            backfaceVisibility: "hidden",
+            background: `linear-gradient(135deg, ${accentHex}55 0%, ${accentHex}22 60%, ${accentHex}44 100%)`,
+          }}
         >
           <img
-            src="profile_p.png"
+            src={`${import.meta.env.BASE_URL}profile_p.png`}
             alt="Nirmal Colambage — Aspiring Data Scientist"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover mix-blend-luminosity"
+            style={{ opacity: 0.92 }}
           />
           <div
             className="absolute inset-0"
             style={{
-              background: `linear-gradient(to top, ${accentHex}60 0%, transparent 55%)`,
+              background: `linear-gradient(to top, ${accentHex}80 0%, ${accentHex}10 55%, transparent 100%)`,
             }}
           />
           <div className="absolute bottom-4 left-4 right-4">

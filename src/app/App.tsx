@@ -288,6 +288,7 @@ const NAV_LINKS = [
   "About",
   "Projects",
   "Experience",
+  "Articles",
   "Contact",
 ];
 
@@ -2058,6 +2059,64 @@ function ExperienceSection({
   );
 }
 
+function ArticlesSection({
+  isDark,
+  accent,
+}: {
+  isDark: boolean;
+  accent: AccentKey;
+}) {
+  const accentHex = ACCENTS[accent].hex;
+  return (
+    <section id="articles" className="py-24">
+      <div className="max-w-5xl mx-auto px-6">
+        <SectionLabel text="Articles" hex={accentHex} />
+        <h2
+          className={`text-4xl md:text-5xl font-extrabold mb-14 ${isDark ? "text-white" : "text-slate-900"}`}
+          style={{ fontFamily: "'Outfit', sans-serif" }}
+        >
+          My Writing
+        </h2>
+        
+        <div className="grid gap-6">
+          <a 
+            href="https://medium.com/@ravinducolambage/bridging-the-gap-integrating-sql-and-python-for-data-driven-web-applications-93c76565b56d?sharedUserId=ravinducolambage"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`block p-6 md:p-8 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group ${glassCard(isDark)}`}
+          >
+            <div className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
+              <div>
+                <p 
+                  className="text-sm font-bold tracking-widest uppercase mb-3"
+                  style={{ color: accentHex, fontFamily: "'DM Mono', monospace" }}
+                >
+                  Medium Article
+                </p>
+                <h3 
+                  className={`text-2xl font-bold mb-3 transition-colors ${isDark ? "text-white group-hover:text-white/80" : "text-slate-900 group-hover:text-slate-700"}`}
+                  style={{ fontFamily: "'Outfit', sans-serif" }}
+                >
+                  Bridging the Gap: Integrating SQL and Python for Data-Driven Web Applications
+                </h3>
+                <p className={`text-base leading-relaxed ${isDark ? "text-white/65" : "text-slate-600"}`}>
+                  A comprehensive guide on combining the power of SQL databases with Python backends to create robust, data-driven web applications.
+                </p>
+              </div>
+              <div 
+                className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110"
+                style={{ background: `${accentHex}18` }}
+              >
+                <ExternalLink size={20} style={{ color: accentHex }} />
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function ContactSection({
   isDark,
   accent,
@@ -2180,7 +2239,7 @@ function Footer({
           className={`text-xs ${isDark ? "text-white/30" : "text-slate-400"}`}
           style={{ fontFamily: "'DM Mono', monospace" }}
         >
-          © 2025 Nirmal Colambage
+          © 2026 Nirmal Colambage
         </p>
         <p
           className={`text-xs ${isDark ? "text-white/30" : "text-slate-400"}`}
@@ -2288,6 +2347,7 @@ export default function App() {
       <AboutSection isDark={isDark} accent={accent} />
       <ProjectsSection isDark={isDark} accent={accent} />
       <ExperienceSection isDark={isDark} accent={accent} />
+      <ArticlesSection isDark={isDark} accent={accent} />
       <ContactSection isDark={isDark} accent={accent} />
       <Footer isDark={isDark} accentHex={accentHex} />
     </div>

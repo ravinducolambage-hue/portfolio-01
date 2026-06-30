@@ -2180,13 +2180,13 @@ function Footer({
           className={`text-xs ${isDark ? "text-white/30" : "text-slate-400"}`}
           style={{ fontFamily: "'DM Mono', monospace" }}
         >
-          © 2025 Nirmal Colambage — Built with React + Tailwind
+          © 2025 Nirmal Colambage
         </p>
         <p
           className={`text-xs ${isDark ? "text-white/30" : "text-slate-400"}`}
           style={{ fontFamily: "'DM Mono', monospace" }}
         >
-          Sri Lanka · USJ Class of 2028
+          Sri Lanka ·
         </p>
       </div>
       <AnimatePresence>

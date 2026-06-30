@@ -2083,16 +2083,39 @@ function ArticlesSection({
             href="https://medium.com/@ravinducolambage/bridging-the-gap-integrating-sql-and-python-for-data-driven-web-applications-93c76565b56d?sharedUserId=ravinducolambage"
             target="_blank"
             rel="noopener noreferrer"
-            className={`block p-6 md:p-8 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group ${glassCard(isDark)}`}
+            className={`block overflow-hidden rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group ${glassCard(isDark)}`}
           >
-            <div className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
-              <div>
-                <p 
-                  className="text-sm font-bold tracking-widest uppercase mb-3"
-                  style={{ color: accentHex, fontFamily: "'DM Mono', monospace" }}
+            <div className="flex flex-col md:flex-row h-full">
+              {/* Image Section */}
+              <div className="relative w-full md:w-2/5 h-56 md:h-auto overflow-hidden bg-slate-800 shrink-0">
+                <img 
+                  src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop&auto=format" 
+                  alt="Web Development with Python and SQL"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                  style={{ background: `${accentHex}35` }}
                 >
-                  Medium Article
-                </p>
+                  <ExternalLink size={28} className="text-white drop-shadow-lg" />
+                </div>
+              </div>
+              {/* Content Section */}
+              <div className="p-6 md:p-8 flex flex-col justify-center grow">
+                <div className="flex items-center justify-between mb-3">
+                  <p 
+                    className="text-sm font-bold tracking-widest uppercase"
+                    style={{ color: accentHex, fontFamily: "'DM Mono', monospace" }}
+                  >
+                    Medium Article
+                  </p>
+                  <div 
+                    className="w-10 h-10 rounded-full flex md:hidden items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110"
+                    style={{ background: `${accentHex}18` }}
+                  >
+                    <ExternalLink size={16} style={{ color: accentHex }} />
+                  </div>
+                </div>
                 <h3 
                   className={`text-2xl font-bold mb-3 transition-colors ${isDark ? "text-white group-hover:text-white/80" : "text-slate-900 group-hover:text-slate-700"}`}
                   style={{ fontFamily: "'Outfit', sans-serif" }}
@@ -2102,12 +2125,6 @@ function ArticlesSection({
                 <p className={`text-base leading-relaxed ${isDark ? "text-white/65" : "text-slate-600"}`}>
                   A comprehensive guide on combining the power of SQL databases with Python backends to create robust, data-driven web applications.
                 </p>
-              </div>
-              <div 
-                className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110"
-                style={{ background: `${accentHex}18` }}
-              >
-                <ExternalLink size={20} style={{ color: accentHex }} />
               </div>
             </div>
           </a>

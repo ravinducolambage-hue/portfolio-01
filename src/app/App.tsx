@@ -1685,7 +1685,7 @@ function HeroSection({
             <MagneticBtn
               accentHex={accentHex}
               isDark={isDark}
-              onClick={() => window.open("/Nirmal_Colambage_CV.pdf", "_blank")}
+              onClick={() => window.open(import.meta.env.BASE_URL + "Nirmal_Colambage_CV.pdf", "_blank")}
             >
               <span className="flex items-center gap-1.5">View CV <ExternalLink size={14} /></span>
             </MagneticBtn>

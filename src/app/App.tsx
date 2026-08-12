@@ -294,9 +294,9 @@ const NAV_LINKS = [
   "Home",
   "About",
   "Projects",
+  "References",
   "Experience",
   "Articles",
-  "References",
   "Contact",
 ];
 
@@ -2428,9 +2428,9 @@ export default function App() {
       <HeroSection isDark={isDark} accent={accent} />
       <AboutSection isDark={isDark} accent={accent} />
       <ProjectsSection isDark={isDark} accent={accent} />
+      <ReferencesSection isDark={isDark} accent={accent} />
       <ExperienceSection isDark={isDark} accent={accent} />
       <ArticlesSection isDark={isDark} accent={accent} />
-      <ReferencesSection isDark={isDark} accent={accent} />
       <ContactSection isDark={isDark} accent={accent} />
       <Footer isDark={isDark} accentHex={accentHex} />
     </div>

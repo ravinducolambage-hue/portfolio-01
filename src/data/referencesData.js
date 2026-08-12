@@ -1,20 +1,4 @@
-export interface Reference {
-  id: number;
-  name: string;
-  title: string;
-  department: string;
-  faculty: string;
-  university: string;
-  email: string | { primary: string; secondary?: string };
-  mobile?: string;
-  office?: string;
-  tel?: string;
-  website?: string;
-  initials: string;
-  photoFile: string;
-}
-
-export const REFERENCES_DATA: Reference[] = [
+export const references = [
   {
     id: 1,
     name: "Dr. T.M.K.K. Jinasena",
@@ -22,11 +6,15 @@ export const REFERENCES_DATA: Reference[] = [
     department: "Department of Computer Science",
     faculty: "Faculty of Applied Sciences",
     university: "University of Sri Jayewardenepura, Sri Lanka",
-    email: "kasun@sjp.ac.lk",
-    mobile: "+94 71 250 3003",
-    office: "+94 112 758 907",
+    primaryEmail: "kasun@sjp.ac.lk",
+    emails: ["kasun@sjp.ac.lk"],
+    phones: [
+      { label: "Mobile", number: "+94 71 250 3003" },
+      { label: "Office", number: "+94 112 758 907" },
+    ],
+    website: null,
     initials: "TJ",
-    photoFile: "ref1_jinasena.jpg",
+    photo: "/images/references/ref1_jinasena.jpg",
   },
   {
     id: 2,
@@ -35,15 +23,15 @@ export const REFERENCES_DATA: Reference[] = [
     department: "Department of Computer Science",
     faculty: "Faculty of Applied Sciences",
     university: "University of Sri Jayewardenepura, Gangodawila, Nugegoda, Sri Lanka",
-    email: {
-      primary: "suranishalika@sjp.ac.lk",
-      secondary: "surani@sci.sjp.ac.lk",
-    },
-    tel: "+94 11 2758912",
-    mobile: "+94 74 2916161",
+    primaryEmail: "suranishalika@sjp.ac.lk",
+    emails: ["suranishalika@sjp.ac.lk", "surani@sci.sjp.ac.lk"],
+    phones: [
+      { label: "Tel", number: "+94 11 2758912" },
+      { label: "Mobile", number: "+94 74 2916161" },
+    ],
     website: "https://www.sjp.ac.lk/",
     initials: "ST",
-    photoFile: "ref2_tissera.jpg",
+    photo: "/images/references/ref2_tissera.jpg",
   },
   {
     id: 3,
@@ -52,8 +40,11 @@ export const REFERENCES_DATA: Reference[] = [
     department: "Department of Knowledge Engineering and Communication",
     faculty: "Faculty of Computing",
     university: "University of Sri Jayewardenepura, Sri Lanka",
-    email: "vindya@sjp.ac.lk",
+    primaryEmail: "vindya@sjp.ac.lk",
+    emails: ["vindya@sjp.ac.lk"],
+    phones: [],
+    website: null,
     initials: "VS",
-    photoFile: "ref3_senanayake.jpg",
+    photo: "/images/references/ref3_senanayake.jpg",
   },
 ];

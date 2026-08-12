@@ -116,6 +116,7 @@ const PROJECTS: Project[] = [
     detail:
       "Built with HTML, CSS, JavaScript, PHP, and MySQL. Features three distinct user roles and focuses on connecting local travellers with authentic Sri Lankan destinations.",
     category: ["Full Stack"],
+    github: "https://github.com/Chethiya4/Roamly_Platform",
   },
   {
     id: 2,
